@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="rowlistItemData" extends="ContentNode">
+
+<interface>
+  <field id="posterUrl" type="string" />
+  <field id="originalImage" type="string" />
+  <field id="showTitle" type="string" />
+  <field id="rating" type="float" />
+  <field id="description" type="string" />
+  <field id="network" type="string" />
+  <field id="genres" type="array" />
+</interface>
+
+</component>

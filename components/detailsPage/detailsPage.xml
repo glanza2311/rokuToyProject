@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <component name="detailsPage" extends="Group" initialFocus="Buttons" >
+
+    <children>
+        <!-- background -->
+        <Rectangle
+          id="rectangle"
+          translation="[0,0]"
+          width="1920"
+          height="1080"
+          color="#1a000d" />
+
+        <!-- little black background -->
+        <Rectangle
+          id="rectangle2"
+          translation="[234,257]"
+          width="1471.76"
+          height="713.38"
+          color="#000000"
+          opacity="0.6"/>
+
+        <Poster
+          id="detailShowImage"
+          uri="http://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg"
+          width="844.76"
+          height="547.94"
+          translation="[296,333]"
+    			opacity="0.7"/>
+
+        <Label
+          id="showNetwork"
+          height="44"
+          width="355"
+          font="font:SmallestSystemFont"
+          text = "Network: networkName"
+          horizAlign = "left"
+          vertAlign = "center"
+          translation="[1233,745]" />
+
+        <Label
+          id="showGenres"
+          height="44"
+          width="355"
+          font="font:SmallestSystemFont"
+          text = "Genres: showGenres"
+          horizAlign = "left"
+          vertAlign = "center"
+          translation="[1233,692]" />
+
+      <!-- buttons   -->
+       <LabelList
+          id = "detailsPageMenu"
+          translation = "[1233,416]"
+          itemSize = "[300,48]">
+          <ContentNode id = "menu" role = "content" >
+            <ContentNode title = "Play Video" />
+          </ContentNode>
+       </LabelList>
+
+      <!-- Playback node -->
+       <Video
+         id="VideoPlayer"
+         visible="false"
+         translation="[0, 0]"
+         width="1920"
+         height="1080" />
+
+      <Overhang
+         id="overhang"
+         color="#000000"
+         showClock="true"
+         title="Details Page" />
+
+    </children>
+
+    <interface>
+       <!-- Alias to network label -->
+       <field id="network" type="node" alias=""/>
+       <!-- Alias to overhang label -->
+       <field id="overhang" type="node" alias=""/>
+       <!-- Alias to genre label -->
+       <field id="genre" type="node" alias=""/>
+       <!-- Content node -->
+       <field id="focusedcontent" type="node" onChange="OnContentChanged"/>
+       <!-- Alias to image poster -->
+       <field id="showImage"      type="node" alias=""/>
+       <!-- Item selected on the label list -->
+       <field id="itemSelected" type="integer" alwaysnotify="true" alias="detailsPageMenu.itemSelected" onChange="onItemSelected" />
+       <!-- Playback flag -->
+       <field id="videoPlayerVisible" type="bool" alwaysnotify="true" alias="VideoPlayer.visible"  onChange="onVideoVisibleChange" />
+   </interface>
+
+  <script type="text/brightscript" uri="pkg:/components/detailsPage/detailsPage.brs" />
+
+</component>

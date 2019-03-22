@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="mainPageHandler" extends="Task" >
+
+  <interface>
+     <field id="content" type="roAssociativeArray" alwaysnotify="true"/>
+ </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/handlers/mainPageHandler.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Url.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+
+</component>

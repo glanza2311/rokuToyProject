@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="mainPage" extends="Group" initialFocus="showRowlist">
+	<children>
+
+		<Rectangle
+      id="background"
+      color="#1a000d"
+      width="1920"
+      height="1080"
+      translation="[0,0]" />
+
+      <Label
+        id="showTitle"
+        height="44"
+        width="550"
+        font="font:LargeBoldSystemFont"
+        text = ""
+        horizAlign = "left"
+        vertAlign = "center"
+        translation="[60,200]" />
+
+      <Label
+        id="showRating"
+        height="44"
+        width="550"
+        font="font:SmallestSystemFont"
+        text = ""
+        horizAlign = "left"
+        vertAlign = "center"
+        translation="[60,250]" />
+
+      <Label
+        id="showDescription"
+        color="0xFFFFFF"
+        wrap="true"
+        width="850"
+        height="350"
+        lineSpacing="7"
+        translation="[60,312]"
+        font= "font:SmallestSystemFont"
+        text=""/>
+
+      <Poster
+        id="heroImage"
+        uri=""
+        width="910"
+        height="470"
+        translation="[993,173]"
+				opacity="0.7"/>
+
+			<RowList
+		    id="showRowlist"
+	      translation="[58,710]"
+				numRows = "4"
+				itemSize = "[1800, 305]"
+				rowItemSize = "[ [325, 225]]"
+				itemSpacing = "[ 0, 80 ]"
+				rowItemSpacing = "[ [40, 0] ]"
+				rowLabelOffset = "[ [0, 30] ]"
+				rowFocusAnimationStyle = "fixedFocusWrap"
+				showRowLabel = "[true]"
+				showRowCounter = "[true]"
+				itemComponentName = "rowlistItem"
+				/>
+
+   </children>
+
+	 <interface>
+		 <!-- Grid Content Node -->
+     <field id="content" type="node" alias="showRowlist.content" />
+
+		 <!-- Row item selection handler -->
+		 <field id="rowItemSelected" type="intarray" alias="showRowlist.rowItemSelected" alwaysnotify="true"/>
+
+		 <!-- Row item focused handler - sets background image uri and focusedContent field -->
+     <field id="itemFocused" type="intarray" alias="showRowlist.rowItemFocused" onChange="OnItemFocused"/>
+
+		<!-- Interface to focused item (Content Node) -->
+	 	 <field id="focusedContent"  type="node"/>
+	</interface>
+<!-- BrightScript File Reference -->
+
+<script type="text/brightscript" uri="pkg:/components/mainPage/mainPage.brs"/>
+</component>

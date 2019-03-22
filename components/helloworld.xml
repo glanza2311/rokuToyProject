@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene">
+
+	<children>
+			<mainPage
+	      id="mainPage"
+	      visible="true"/>
+			<detailsPage
+				id="detailsPage"
+				visible="false"/>
+			<Overhang
+				id="overhang"
+				color="#000000"
+				showClock="true"
+				title="Main Menu" />
+	    <LoadingIndicator
+	      id="LoadingIndicator"
+	      imageUri="pkg:/components/LoadingIndicator/loader.png"
+	      clockwise="true"
+	      spinInterval="2"
+	      fadeInterval="0.5"
+	      spacing="20"
+	      imageWidth="100"
+	      text="Loading data..."
+	      width="1920"
+	      height="1080"
+	      centered="false"
+	      translation="[0, 0]"
+	      textPadding="10"
+	      font="font:SmallBoldSystemFont"
+	      backgroundColor="0x551A8B"
+	      backgroundOpacity="0"/>
+    </children>
+
+	<interface>
+		  <field id="rowItemSelected" type="intarray" alias="mainPage.rowItemSelected" alwaysNotify="true" onChange="OnRowItemSelected" />
+			<field id="focusedContent"  type="node" alias="mainPage.focusedContent" alwaysnotify="true"/>
+			<field id="content" type="node" alias="mainPage.content" onChange="OnChangeContent" />
+	</interface>
+	
+<script type="text/brightscript" uri="pkg:/components/helloworld.brs"/>
+</component>
